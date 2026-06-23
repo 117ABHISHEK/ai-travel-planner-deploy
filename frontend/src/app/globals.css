@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-serif: 'Merriweather', Georgia, serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FAF6EE;
+    color: #2D312E;
+    font-family: var(--font-sans);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #FAF6EE;
+    border-left: 1px solid #EAE1D3;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #DECFC0;
+    border-radius: 4px;
+    border: 2px solid #FAF6EE;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C85C38;
+  }
+
+  ::selection {
+    background: rgba(200, 92, 56, 0.15);
+    color: #C85C38;
+  }
+}
+
+@layer components {
+  /* Redesigned Premium Buttons with Warm Travel Aesthetic */
+  .btn-primary, .btn-adventure {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2 focus:ring-offset-parchment disabled:opacity-50 disabled:cursor-not-allowed shadow-journal-sm;
+    background: linear-gradient(135deg, #C85C38 0%, #D99C3B 100%);
+  }
+
+  .btn-primary:hover:not(:disabled), .btn-adventure:hover:not(:disabled) {
+    transform: translateY(-1.5px);
+    box-shadow: 0 8px 20px rgba(200, 92, 56, 0.25);
+  }
+
+  .btn-primary:active:not(:disabled), .btn-adventure:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  .btn-secondary, .btn-journal-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sage border border-sage/30 bg-sage-light/40 transition-all duration-200 hover:bg-sage-light hover:border-sage/60 focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 focus:ring-offset-parchment disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost, .btn-journal-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-journal-dark/60 transition-all duration-200 hover:text-journal-dark hover:bg-journal-dark/5 focus:outline-none;
+  }
+
+  .btn-danger, .btn-journal-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-red-600 border border-red-200 bg-red-50 transition-all duration-200 hover:bg-red-100 hover:border-red-300 focus:outline-none;
+  }
+
+  /* Scrapbook Cards & Ornaments */
+  .card {
+    @apply rounded-2xl border border-[#EDE4DE] bg-sand;
+    box-shadow: 0 4px 16px rgba(45, 49, 46, 0.04);
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300 hover:border-terracotta/40 hover:shadow-journal-hover;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Washi Tape Ribbon Decoration for Scrapbook Vibe */
+  .washi-tape {
+    position: absolute;
+    width: 70px;
+    height: 20px;
+    background-color: rgba(217, 156, 59, 0.2);
+    transform: rotate(-10deg);
+    top: -8px;
+    left: 20px;
+    border-left: 2px dashed rgba(217, 156, 59, 0.4);
+    border-right: 2px dashed rgba(217, 156, 59, 0.4);
+    pointer-events: none;
+  }
+
+  /* Warm Journal Inputs */
+  .input {
+    @apply w-full px-4 py-3 rounded-xl bg-sand border border-[#DECFC0] text-journal-dark placeholder-slate-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta/40 focus:border-terracotta;
+  }
+
+  .input:hover {
+    @apply border-[#C85C38]/40;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-journal-dark/80 mb-2;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border;
+  }
+
+  .badge-low {
+    @apply badge bg-sage-light text-sage border-sage/30;
+  }
+
+  .badge-medium {
+    @apply badge bg-ochre-light text-ochre border-ochre/30;
+  }
+
+  .badge-high {
+    @apply badge bg-terracotta-light text-terracotta border-terracotta/30;
+  }
+
+  /* Glassmorphism Redefined in Parchment Accent */
+  .glass {
+    background: rgba(250, 246, 238, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(222, 207, 192, 0.5);
+  }
+
+  .section-heading {
+    @apply text-2xl font-serif font-bold text-journal-dark;
+  }
+
+  .divider {
+    @apply border-t border-[#EAE1D3] my-6;
+  }
+
+  .spinner {
+    @apply inline-block w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin;
+  }
+}
+
+/* Scrapbook Itinerary Timeline Line */
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 24px;
+  bottom: 0;
+  width: 2px;
+  border-left: 2px dashed #DECFC0;
+}
+
+/* Gradient Text for Warm Aesthetic */
+.gradient-text {
+  background: linear-gradient(135deg, #C85C38 0%, #D99C3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Warm Ambient Orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.08;
+  background: radial-gradient(circle, #C85C38 0%, #D99C3B 100%);
+  pointer-events: none;
+}
