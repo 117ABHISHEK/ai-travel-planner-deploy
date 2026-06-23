@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { Compass, Calendar, DollarSign, Tag, Sparkles, Loader2, X } from 'lucide-react';
+import { Compass, Calendar, DollarSign, Tag, Sparkles, Loader2, X, Backpack, Plane, Gem } from 'lucide-react';
 import { CreateTripFormData, BudgetTier } from '@/types';
 
 const INTEREST_OPTIONS = [
@@ -10,10 +10,10 @@ const INTEREST_OPTIONS = [
   'Hiking', 'Local Experiences', 'Luxury', 'Budget Travel', 'Family-Friendly',
 ];
 
-const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string; color: string }[] = [
-  { value: 'Low', label: '🎒 Budget Backpacker', desc: 'Hostels, local street food, free trails', color: 'border-sage bg-sage-light/20 text-sage' },
-  { value: 'Medium', label: '✈️ Globetrotter', desc: '3-star guesthouses, casual bistros, paid landmarks', color: 'border-ochre bg-ochre-light/20 text-ochre' },
-  { value: 'High', label: '💎 Premium Voyager', desc: '5-star resorts, fine dining, private tours', color: 'border-terracotta bg-terracotta-light/20 text-terracotta' },
+const BUDGET_OPTIONS: { value: BudgetTier; label: string; desc: string; color: string; icon: React.ElementType }[] = [
+  { value: 'Low', label: 'Budget Backpacker', desc: 'Hostels, local street food, free trails', color: 'border-sage bg-sage-light/20 text-sage', icon: Backpack },
+  { value: 'Medium', label: 'Globetrotter', desc: '3-star guesthouses, casual bistros, paid landmarks', color: 'border-ochre bg-ochre-light/20 text-ochre', icon: Plane },
+  { value: 'High', label: 'Premium Voyager', desc: '5-star resorts, fine dining, private tours', color: 'border-terracotta bg-terracotta-light/20 text-terracotta', icon: Gem },
 ];
 
 interface Props {
@@ -116,7 +116,10 @@ export default function CreateTripForm({ onSubmit, isLoading }: Props) {
               }`}
             >
               <div className="flex-1">
-                <p className="font-bold text-journal-dark text-sm">{opt.label}</p>
+                <p className="font-bold text-journal-dark text-sm flex items-center gap-1.5">
+                  <opt.icon className={`w-4 h-4 ${budgetTier === opt.value ? '' : 'opacity-70'}`} />
+                  {opt.label}
+                </p>
                 <p className="text-xs text-journal-dark/60 mt-0.5 font-medium">{opt.desc}</p>
               </div>
               <div className={`w-4 h-4 rounded-full border-2 mt-0.5 shrink-0 flex items-center justify-center ${
