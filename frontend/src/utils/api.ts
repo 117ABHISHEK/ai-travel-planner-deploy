@@ -1,6 +1,6 @@
 import { Trip, TripSummary, AuthResponse, CreateTripFormData, PackingItem, DayItinerary } from '@/types';
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5000');
 
 // ─── Generic fetch wrapper ────────────────────────────────────────────────────
 
