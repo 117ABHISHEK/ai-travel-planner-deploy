@@ -36,7 +36,7 @@ export default function HotelCard({ hotels }: Props) {
         return (
           <div
             key={idx}
-            className={`rounded-2xl border-2 p-5 transition-all duration-300 hover:translate-y-[-2px] bg-sand hover:shadow-journal relative overflow-hidden flex flex-col justify-between ${styles.border}`}
+            className={`rounded-2xl border-2 p-5 transition-all duration-300 hover:translate-y-[-2px] bg-sand hover:shadow-journal relative flex flex-col justify-between ${styles.border}`}
           >
             <div className="washi-tape" style={{ top: '-10px', left: '15px', width: '55px', height: '18px' }} />
 

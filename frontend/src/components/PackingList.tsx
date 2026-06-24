@@ -97,7 +97,7 @@ export default function PackingList({ packingList, onToggleItem, isUpdating }: P
       </div>
 
       {/* Packing items ledger */}
-      <div className="card border-[#DECFC0] overflow-hidden bg-sand shadow-journal-sm">
+      <div className="card border-[#DECFC0] bg-sand shadow-journal-sm relative">
         {filteredItems.length === 0 ? (
           <p className="text-center text-journal-dark/40 font-semibold text-sm py-8">No checklist items in this category.</p>
         ) : (

@@ -244,7 +244,7 @@ export default function HomePage() {
 
       {/* ─── CTA ──────────────────────────────────────────── */}
       <section className="px-6 py-24 text-center border-t border-[#EAE1D3]">
-        <div className="max-w-2xl mx-auto card p-10 md:p-14 border-[#DECFC0] shadow-journal bg-sand relative overflow-hidden">
+        <div className="max-w-2xl mx-auto card p-10 md:p-14 border-[#DECFC0] shadow-journal bg-sand relative">
           <div className="washi-tape" style={{ top: '-10px', left: '50%', transform: 'translateX(-50%) rotate(2deg)' }} />
           <div className="relative">
             <h2 className="text-3xl md:text-5xl font-serif font-black text-journal-dark mb-4">

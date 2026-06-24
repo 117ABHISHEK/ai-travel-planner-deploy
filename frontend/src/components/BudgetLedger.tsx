@@ -21,7 +21,7 @@ export default function BudgetLedger({ budget, durationDays }: Props) {
   return (
     <div className="space-y-4">
       {/* Total Card */}
-      <div className="card border-[#DECFC0] p-6 text-center relative overflow-hidden bg-sand shadow-journal-sm">
+      <div className="card border-[#DECFC0] p-6 text-center relative bg-sand shadow-journal-sm">
         <div className="washi-tape" style={{ top: '-8px', left: '50%', transform: 'translateX(-50%) rotate(1deg)', width: '80px' }} />
         
         <div className="relative">

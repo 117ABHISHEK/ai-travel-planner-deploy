@@ -102,6 +102,7 @@
     border-left: 2px dashed rgba(217, 156, 59, 0.4);
     border-right: 2px dashed rgba(217, 156, 59, 0.4);
     pointer-events: none;
+    z-index: 50;
   }
 
   /* Warm Journal Inputs */
